@@ -15,4 +15,4 @@ The minimal requirements are:
 
 ***
 
-![Sample](https://github.com/ahatting/KUPET/blob/master/Sample1.png "KUPET")
+![Sample](https://github.com/ahatting/ICE/blob/master/Sample1.png "ICE")
