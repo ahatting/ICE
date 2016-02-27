@@ -802,6 +802,7 @@ function Call-ICE_pff {
 	$formMain.Controls.Add($datagridviewResults)
 	$formMain.ClientSize = '807, 473'
 	#region Binary Data
+	
 	$formMain.Icon = [System.Convert]::FromBase64String('
 AAABAAYAEBAAAAAAIABoBAAAZgAAACAgAAAAACAAqBAAAM4EAAAwMAAAAAAgAKglAAB2FQAAQEAA
 AAAAIAAoQgAAHjsAAICAAAAAACAAKAgBAEZ9AAAAAAAAAAAgACggBABuhQEAKAAAABAAAAAgAAAA
@@ -7298,6 +7299,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=')
 	#endregion
 	$formMain.Name = "formMain"
+	$formMain.MaximizeBox = $false
 	$formMain.StartPosition = 'CenterScreen'
 	$formMain.Text = "Instant Certificate Export"
 	$formMain.add_Load($FormEvent_Load)
