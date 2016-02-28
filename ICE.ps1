@@ -2,6 +2,7 @@
 # Created On: 27-2-2016 22:02
 # Created By: Armand Hatting - KEMBIT B.V.
 ########################################################################
+
 #----------------------------------------------
 #region Application Functions
 #----------------------------------------------
@@ -709,7 +710,7 @@ function Call-ICE_pff {
 			$statusbar.PerformStep()
 		} #end else
 			$global:exportData = $output
-			$statustext.Text = "Done fetching certificates"
+			
 			$table = ConvertTo-DataTable -InputObject $output
 			Load-DataGridView -DataGridView $datagridviewResults -Item $table
 			
@@ -720,14 +721,15 @@ function Call-ICE_pff {
 				
 			    if ($RowType -lt (Get-Date))
 			    {
-			        $DataGridViewRow.DefaultCellStyle.BackColor = "255,0,0"
+			        $DataGridViewRow.DefaultCellStyle.BackColor = "192,0,0"
 			       
 			    }
 			    elseif ($RowType -gt (Get-Date)){
-			        $DataGridViewRow.DefaultCellStyle.BackColor = "0,255,0"
+			        $DataGridViewRow.DefaultCellStyle.BackColor = "0,176,80"
 			        }
 			}
 		} #end foreach
+		$statustext.Text = "Done fetching certificates"
 		$statusbar.Value = 0
 	}#end buttonFetchCertificates_Click
 	
@@ -802,7 +804,6 @@ function Call-ICE_pff {
 	$formMain.Controls.Add($datagridviewResults)
 	$formMain.ClientSize = '807, 473'
 	#region Binary Data
-	
 	$formMain.Icon = [System.Convert]::FromBase64String('
 AAABAAYAEBAAAAAAIABoBAAAZgAAACAgAAAAACAAqBAAAM4EAAAwMAAAAAAgAKglAAB2FQAAQEAA
 AAAAIAAoQgAAHjsAAICAAAAAACAAKAgBAEZ9AAAAAAAAAAAgACggBABuhQEAKAAAABAAAAAgAAAA
@@ -7298,8 +7299,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=')
 	#endregion
+	$formMain.MaximizeBox = $False
 	$formMain.Name = "formMain"
-	$formMain.MaximizeBox = $false
 	$formMain.StartPosition = 'CenterScreen'
 	$formMain.Text = "Instant Certificate Export"
 	$formMain.add_Load($FormEvent_Load)
