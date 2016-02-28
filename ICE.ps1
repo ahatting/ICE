@@ -665,6 +665,7 @@ function Call-ICE_pff {
 	#	$table = ConvertTo-DataTable -InputObject $processes -FilterWMIProperties
 	#	Load-DataGridView -DataGridView $datagridviewResults -Item $table
 		$Propertieslist.Items.Add("Select All") > $null
+		$Propertieslist.Items.Add("Localhost") > $null
 		Get-ADComputer -Filter * | Select-Object -ExpandProperty DnsHostName | Sort-Object | ForEach-Object {
 			[void]$Propertieslist.Items.Add($_)
 			}
